@@ -28,4 +28,4 @@ foreach ($vm in $vms) {
   Write-Host "$vmname tagged"
 }
 
-Write-host "All VMs tagged with $newtag $newscope"
+Write-host "All VMs tagged with tag $newtag $newscope"
