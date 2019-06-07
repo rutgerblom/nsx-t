@@ -1,2 +1,2 @@
 # nsx-t
-Scripts for NSX-T
+Just some experimental scripts for NSX-T
