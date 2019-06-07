@@ -1,7 +1,7 @@
 # General variables
 $vcenter = Read-Host -Prompt "Enter vCenter FQDN/IP"
 $vccred = Get-Credential -Message "vCenter Credentials"
-$vccluster = Read-Host -Prompt "Enter the vSphere cluster to fetch virtual machines"
+$vccluster = Read-Host -Prompt "Enter the vSphere cluster name to fetch virtual machines"
 $nsxmanager = Read-Host -Prompt "Enter NSX Manager FQDN/IP"
 $nsxcred = Get-Credential -Message "NSX Manager Credentials"
 $posturl = "https://$nsxmanager/api/v1/fabric/virtual-machines?action=update_tags"
