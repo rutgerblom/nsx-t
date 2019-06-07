@@ -24,7 +24,7 @@ foreach ($vm in $vms) {
     {"external_id":"$vmid","tags":[{"scope":"$newscope","tag":"$newtag"},$currenttags]}
 "@
   Invoke-RestMethod -Uri $posturl -Authentication Basic -Credential $nsxcred -Method Post -Body $JSON -ContentType "application/json" -SkipCertificateCheck
-    Write-Host "$vmname tagged"
+  Write-Host "$vmname tagged"
 }
 
 Write-host "All VMs tagged!"
