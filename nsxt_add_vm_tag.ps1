@@ -8,7 +8,7 @@ $posturl = "https://$nsxmanager/api/v1/fabric/virtual-machines?action=update_tag
 $newtag = Read-Host -Prompt "Enter tag to add"
 $newscope = Read-Host -Prompt "Enter the tag scope (optional)"
 
-# Connect to vCenter and fetch virtual machines. Adjust this query to fetch a subset of virtual machines.
+# Connect to vCenter and fetch virtual machine info. Adjust this query to fetch a subset of virtual machine info.
 Connect-VIServer -Server $vcenter -Credential $vccred
 $vms = Get-Cluster $vccluster | Get-VM | ForEach-Object { $_ | Get-View }
 
