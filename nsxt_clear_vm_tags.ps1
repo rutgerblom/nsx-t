@@ -18,7 +18,7 @@ foreach ($vm in $vms) {
     {"external_id":"$vmid","tags":[{"scope":"","tag":""}]}
 "@
   Invoke-RestMethod -Uri $posturl -Authentication Basic -Credential $nsxcred -Method Post -Body $JSON -ContentType "application/json" -SkipCertificateCheck
-  Write-Host "$vmname tags removed"
+  Write-Host "Tags removed from $vmname"
 }
 
 Write-host "All tags have been removed"
