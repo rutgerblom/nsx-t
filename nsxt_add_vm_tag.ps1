@@ -5,6 +5,7 @@ $vccluster = Read-Host -Prompt "Enter the vSphere cluster name to fetch virtual 
 $nsxmanager = Read-Host -Prompt "Enter NSX Manager FQDN/IP"
 $nsxcred = Get-Credential -Message "NSX Manager Credentials"
 $posturl = "https://$nsxmanager/api/v1/fabric/virtual-machines?action=update_tags"
+$operation = Read-Host "Replace all existing tags?(y/n)"
 $newtag = Read-Host -Prompt "Enter tag to add"
 $newscope = Read-Host -Prompt "Enter the tag scope (optional)"
 
@@ -12,6 +13,7 @@ $newscope = Read-Host -Prompt "Enter the tag scope (optional)"
 Connect-VIServer -Server $vcenter -Credential $vccred
 $vms = Get-Cluster $vccluster | Get-VM | ForEach-Object { $_ | Get-View }
 
+If ($operation -eq "n") {
 # Tag the fetched virtual machines
 foreach ($vm in $vms) {
     $vmid = $vm.Config.InstanceUuid
@@ -27,5 +29,16 @@ foreach ($vm in $vms) {
   Invoke-RestMethod -Uri $posturl -Authentication Basic -Credential $nsxcred -Method Post -Body $JSON -ContentType "application/json" -SkipCertificateCheck
   Write-Host "$vmname tagged"
 }
-
+} else {
+  # Tag the fetched virtual machines
+foreach ($vm in $vms) {
+  $vmid = $vm.Config.InstanceUuid
+  $vmname = $vm.Config.Name
+  $JSON = @"
+  {"external_id":"$vmid","tags":[{"scope":"$newscope","tag":"$newtag"}]}
+"@
+Invoke-RestMethod -Uri $posturl -Authentication Basic -Credential $nsxcred -Method Post -Body $JSON -ContentType "application/json" -SkipCertificateCheck
+Write-Host "Tags removed from $vmname"
+}
+}
 Write-host "All VMs tagged with tag $newtag $newscope"
