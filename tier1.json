@@ -6,7 +6,7 @@
                 "type": "DISCONNECTED",
                 "transport_zone_path": "/infra/sites/default/enforcement-points/default/transport-zones/12d25875-7960-4ceb-91f1-f39a24a57014",
                 "resource_type": "Segment",
-                "id": "K8S-NodeTransport-2",
+                "id": "K8S-NodeTransport",
                 "parent_path": "/infra/segments/K8S-NodeTransport"
             },
             "resource_type": "ChildSegment",
@@ -22,8 +22,8 @@
                     "TIER1_IPSEC_LOCAL_ENDPOINT"
                 ],
                 "resource_type": "Tier1",
-                "id": "T1-K8S-NodeManagement-2",
-                "parent_path": "/infra/tier-1s/T1-K8S-NodeManagement-2",
+                "id": "T1-K8S-NodeManagement",
+                "parent_path": "/infra/tier-1s/T1-K8S-NodeManagement",
                 "children": [
                     {
                         "resource_type": "ChildSegment",
