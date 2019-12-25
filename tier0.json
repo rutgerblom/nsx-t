@@ -1,0 +1,19 @@
+{
+  "resource_type": "Infra",
+  "children": [
+    {
+      "Tier0": {
+        "ha_mode": "ACTIVE_STANDBY",
+        "failover_mode": "NON_PREEMPTIVE",
+        "resource_type": "Tier0",
+        "id": "T0",
+        "display_name": "T0",
+        "children": [],
+        "marked_for_delete": false
+      },
+      "resource_type": "ChildTier0",
+      "marked_for_delete": false
+    }
+  ],
+  "marked_for_delete": false
+}

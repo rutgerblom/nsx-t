@@ -1,0 +1,23 @@
+{
+  "resource_type": "Infra",
+  "children": [
+    {
+      "resource_type": "ChildTier1",
+      "marked_for_delete": false,
+      "Tier1": {
+        "tier0_path": "/infra/tier-0s/T0",
+        "failover_mode": "NON_PREEMPTIVE",
+        "enable_standby_relocation": false,
+        "route_advertisement_types": [
+          "TIER1_CONNECTED",
+          "TIER1_IPSEC_LOCAL_ENDPOINT"
+        ],
+        "resource_type": "Tier1",
+        "id": "Test-T1",
+        "display_name": "Test-T1",
+        "children": [],
+        "marked_for_delete": false
+      }
+    }
+  ]
+}
