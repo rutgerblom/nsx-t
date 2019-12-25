@@ -20,8 +20,8 @@
                           ],
                           "edge_cluster_path": "/infra/sites/default/enforcement-points/default/edge-clusters/32cd640f-fa9d-452e-9e6f-aaa67c9d1dee",
                           "resource_type": "LocaleServices",
-                          "id": "LocalServices",
-                          "path": "/infra/tier-0s/T0/locale-services/LocalServices",
+                          "id": "T0LocalServices",
+                          "path": "/infra/tier-0s/T0/locale-services/T0LocalServices",
                           "parent_path": "/infra/tier-0s/T0",
                           "children": [
                               {
@@ -40,7 +40,7 @@
                                       "resource_type": "BgpRoutingConfig",
                                       "id": "bgp",
                                       "display_name": "bgp",
-                                      "path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp",
+                                      "path": "/infra/tier-0s/T0/locale-services/T0LocalServices/bgp",
                                       "relative_path": "bgp",
                                       "parent_path": "/infra/tier-0s/T0",
                                       "children": [
@@ -66,8 +66,8 @@
                                                   "maximum_hop_limit": 1,
                                                   "resource_type": "BgpNeighborConfig",
                                                   "id": "BGPNeighborConfig",
-                                                  "path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp/neighbors/BGPNeighborConfig",
-                                                  "parent_path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp",
+                                                  "path": "/infra/tier-0s/T0/locale-services/T0LocalServices/bgp/neighbors/BGPNeighborConfig",
+                                                  "parent_path": "/infra/tier-0s/T0/locale-services/T0LocalServices/bgp",
                                                   "children": [],
                                                   "marked_for_delete": false
                                               },
@@ -88,8 +88,8 @@
                                       "resource_type": "Tier0Interface",
                                       "id": "en1-uplink1",
                                       "display_name": "en1-uplink1",
-                                      "path": "/infra/tier-0s/T0/locale-services/LocalServices/interfaces/en1-uplink1",
-                                      "parent_path": "/infra/tier-0s/T0/locale-services/LocalServices",
+                                      "path": "/infra/tier-0s/T0/locale-services/T0LocalServices/interfaces/en1-uplink1",
+                                      "parent_path": "/infra/tier-0s/T0/locale-services/T0LocalServices",
                                       "children": [],
                                       "marked_for_delete": false,
                                       "subnets": [
