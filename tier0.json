@@ -7,8 +7,110 @@
         "failover_mode": "NON_PREEMPTIVE",
         "resource_type": "Tier0",
         "id": "T0",
-        "display_name": "T0",
-        "children": [],
+        "parent_path": "/infra/tier-0s/T0",
+        "children": [
+          {
+            "LocaleServices": {
+              "route_redistribution_types": [
+                "TIER1_LB_VIP",
+                "TIER1_CONNECTED",
+                "TIER0_SEGMENT",
+                "TIER1_LB_SNAT",
+                "TIER1_NAT"
+              ],
+              "edge_cluster_path": "/infra/sites/default/enforcement-points/default/edge-clusters/32cd640f-fa9d-452e-9e6f-aaa67c9d1dee",
+              "resource_type": "LocaleServices",
+              "id": "LocalServices",
+              "path": "/infra/tier-0s/T0/locale-services/LocalServices",
+              "parent_path": "/infra/tier-0s/T0",
+              "children": [
+                {
+                  "BgpRoutingConfig": {
+                    "local_as_num": "65002",
+                    "enabled": true,
+                    "ecmp": false,
+                    "multipath_relax": true,
+                    "graceful_restart_config": {
+                      "mode": "HELPER_ONLY",
+                      "timer": {
+                        "restart_timer": 180,
+                        "stale_route_timer": 600
+                      }
+                    },
+                    "resource_type": "BgpRoutingConfig",
+                    "id": "bgp",
+                    "display_name": "bgp",
+                    "path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp",
+                    "relative_path": "bgp",
+                    "parent_path": "/infra/tier-0s/T0",
+                    "children": [
+                      {
+                        "BgpNeighborConfig": {
+                          "neighbor_address": "172.16.17.253",
+                          "remote_as_num": "65001",
+                          "password": "",
+                          "route_filtering": [
+                            {
+                              "enabled": true,
+                              "address_family": "IPV4"
+                            }
+                          ],
+                          "keep_alive_time": 60,
+                          "hold_down_time": 180,
+                          "bfd": {
+                            "enabled": false,
+                            "interval": 1000,
+                            "multiple": 3
+                          },
+                          "allow_as_in": false,
+                          "maximum_hop_limit": 1,
+                          "resource_type": "BgpNeighborConfig",
+                          "id": "BGPNeighborConfig",
+                          "path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp/neighbors/BGPNeighborConfig",
+                          "parent_path": "/infra/tier-0s/T0/locale-services/LocalServices/bgp",
+                          "children": [],
+                          "marked_for_delete": false,
+                        },
+                        "resource_type": "ChildBgpNeighborConfig",
+                        "marked_for_delete": false
+                      }
+                    ],
+                    "marked_for_delete": false
+                  },
+                  "resource_type": "ChildBgpRoutingConfig",
+                  "marked_for_delete": false
+                },
+                {
+                  "Tier0Interface": {
+                    "edge_path": "/infra/sites/default/enforcement-points/default/edge-clusters/32cd640f-fa9d-452e-9e6f-aaa67c9d1dee/edge-nodes/2badfc7f-0a84-4dfb-a221-7460d07712cc",
+                    "segment_path": "/infra/segments/vlan-1617",
+                    "type": "EXTERNAL",
+                    "resource_type": "Tier0Interface",
+                    "id": "en1-uplink1",
+                    "display_name": "en1-uplink1",
+                    "path": "/infra/tier-0s/T0/locale-services/LocalServices/interfaces/en1-uplink1",
+                    "parent_path": "/infra/tier-0s/T0/locale-services/LocalServices",
+                    "children": [],
+                    "marked_for_delete": false,
+                    "subnets": [
+                      {
+                        "ip_addresses": [
+                          "172.16.17.2"
+                        ],
+                        "prefix_len": 24
+                      }
+                    ]
+                  },
+                  "resource_type": "ChildTier0Interface",
+                  "marked_for_delete": false
+                }
+              ],
+              "marked_for_delete": false
+            },
+            "resource_type": "ChildLocaleServices",
+            "marked_for_delete": false
+          }
+        ],
         "marked_for_delete": false
       },
       "resource_type": "ChildTier0",
