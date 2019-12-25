@@ -1,4 +1,4 @@
 # nsx-t
-Some experimental scripts for management of VMware NSX-T
+Some experimental scripts and code interacting with VMware NSX-T
 
-Note: You need PowerShell Core with the VMware PowerCLI Core module for the scripts to work.
+Note: You need PowerShell Core with the VMware PowerCLI Core module for the PowerShell scripts to work.
