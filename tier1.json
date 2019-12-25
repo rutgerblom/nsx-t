@@ -1,23 +1,40 @@
 {
   "resource_type": "Infra",
   "children": [
-    {
-      "resource_type": "ChildTier1",
-      "marked_for_delete": false,
-      "Tier1": {
-        "tier0_path": "/infra/tier-0s/T0",
-        "failover_mode": "NON_PREEMPTIVE",
-        "enable_standby_relocation": false,
-        "route_advertisement_types": [
-          "TIER1_CONNECTED",
-          "TIER1_IPSEC_LOCAL_ENDPOINT"
-        ],
-        "resource_type": "Tier1",
-        "id": "Test-T1",
-        "display_name": "Test-T1",
-        "children": [],
-        "marked_for_delete": false
+      {
+          "resource_type": "ChildTier1",
+          "marked_for_delete": false,
+          "Tier1": {
+              "tier0_path": "/infra/tier-0s/T0",
+              "failover_mode": "NON_PREEMPTIVE",
+              "enable_standby_relocation": false,
+              "route_advertisement_types": [
+                  "TIER1_CONNECTED",
+                  "TIER1_IPSEC_LOCAL_ENDPOINT"
+              ],
+              "resource_type": "Tier1",
+              "id": "T1-K8S-NodeManagement",
+              "children": [
+                  {
+                      "resource_type": "ChildSegment",
+                      "Segment": {
+                          "resource_type": "Segment",
+                          "type": "ROUTED",
+                          "subnets": [
+                            {
+                              "gateway_address": "10.190.23.1/24",
+                              "network": "10.190.22.0/24"
+                            }
+                          ],
+                          "connectivity_path": "/infra/tier-1s/T1-K8S-NodeManagement",
+                          "transport_zone_path": "/infra/sites/default/enforcement-points/default/transport-zones/12d25875-7960-4ceb-91f1-f39a24a57014",
+                          "id": "K8S-NodeManagement",
+                          "children": []
+                      }
+                  }
+              ],
+              "marked_for_delete": false
+          }
       }
-    }
   ]
 }
