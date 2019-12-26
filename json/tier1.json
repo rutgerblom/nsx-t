@@ -4,6 +4,37 @@
         {
             "IpAddressPool": {
                 "resource_type": "IpAddressPool",
+                "id": "K8S-NAT-POOL",
+                "parent_path": "/infra/ip-pools/K8S-NAT-POOL",
+                "children": [
+                    {
+                        "IpAddressPoolSubnet": {
+                            "cidr": "10.190.11.0/24",
+                            "gateway_ip": "10.190.11.1",
+                            "allocation_ranges": [
+                                {
+                                    "start": "10.190.11.50",
+                                    "end": "10.190.11.99"
+                                }
+                            ],
+                            "id": "10.190.11-subnet",
+                            "resource_type": "IpAddressPoolStaticSubnet",
+                            "parent_path": "/infra/ip-pools/K8S-NAT-POOL",
+                            "children": [],
+                            "marked_for_delete": false
+                        },
+                        "resource_type": "ChildIpAddressPoolSubnet",
+                        "marked_for_delete": false
+                    }
+                ],
+                "marked_for_delete": false
+            },
+            "resource_type": "ChildIpAddressPool",
+            "marked_for_delete": false
+        },
+        {
+            "IpAddressPool": {
+                "resource_type": "IpAddressPool",
                 "id": "K8S-LB-POOL",
                 "parent_path": "/infra/ip-pools/K8S-LB-POOL",
                 "children": [
