@@ -10,40 +10,7 @@
         {
           "SecurityPolicy": {
             "resource_type": "SecurityPolicy",
-            "id": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
-            "display_name": "K8S-End",
-            "path": "/infra/domains/default/security-policies/31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
-            "relative_path": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
-            "parent_path": "/infra/domains/default",
-            "children": [],
-            "marked_for_delete": false,
-            "sequence_number": 5,
-            "category": "Environment",
-            "stateful": true,
-            "locked": false,
-            "lock_modified_time": 0,
-            "scope": [
-              "ANY"
-            ],
-            "_create_user": "admin",
-            "_create_time": 1577364603777,
-            "_last_modified_user": "admin",
-            "_last_modified_time": 1577364603777,
-            "_system_owned": false,
-            "_protection": "NOT_PROTECTED",
-            "_revision": 0
-          },
-          "resource_type": "ChildSecurityPolicy",
-          "marked_for_delete": false,
-          "_protection": "NOT_PROTECTED"
-        },
-        {
-          "SecurityPolicy": {
-            "resource_type": "SecurityPolicy",
-            "id": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
-            "display_name": "K8S-Begin",
-            "path": "/infra/domains/default/security-policies/2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
-            "relative_path": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "id": "K8S-End",
             "parent_path": "/infra/domains/default",
             "children": [],
             "marked_for_delete": false,
@@ -54,30 +21,34 @@
             "lock_modified_time": 0,
             "scope": [
               "ANY"
-            ],
-            "_create_user": "admin",
-            "_create_time": 1577364603757,
-            "_last_modified_user": "admin",
-            "_last_modified_time": 1577364603757,
-            "_system_owned": false,
-            "_protection": "NOT_PROTECTED",
-            "_revision": 0
+            ]
           },
           "resource_type": "ChildSecurityPolicy",
-          "marked_for_delete": false,
-          "_protection": "NOT_PROTECTED"
+          "marked_for_delete": false
+        },
+        {
+          "SecurityPolicy": {
+            "resource_type": "SecurityPolicy",
+            "id": "K8S-Begin",
+            "display_name": "K8S-Begin",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 1,
+            "category": "Environment",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "scope": [
+              "ANY"
+            ]
+          },
+          "resource_type": "ChildSecurityPolicy",
+          "marked_for_delete": false
         }
       ],
-      "marked_for_delete": false,
-      "_create_user": "system",
-      "_create_time": 1571582169952,
-      "_last_modified_user": "system",
-      "_last_modified_time": 1571582169952,
-      "_system_owned": true,
-      "_protection": "NOT_PROTECTED",
-      "_revision": 0
+      "marked_for_delete": false
     },
     "resource_type": "ChildDomain",
-    "marked_for_delete": false,
-    "_protection": "NOT_PROTECTED"
-  }
+    "marked_for_delete": false
+}
