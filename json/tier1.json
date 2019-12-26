@@ -156,8 +156,7 @@
                 "failover_mode": "NON_PREEMPTIVE",
                 "enable_standby_relocation": false,
                 "route_advertisement_types": [
-                    "TIER1_CONNECTED",
-                    "TIER1_IPSEC_LOCAL_ENDPOINT"
+                    "TIER1_CONNECTED"
                 ],
                 "resource_type": "Tier1",
                 "id": "t1-k8s-nodemanagement",
