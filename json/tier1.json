@@ -13,7 +13,7 @@
                 {
                   "SecurityPolicy": {
                     "resource_type": "SecurityPolicy",
-                    "id": "K8S-End",
+                    "id": "k8s-end",
                     "parent_path": "/infra/domains/default",
                     "children": [],
                     "marked_for_delete": false,
@@ -32,8 +32,8 @@
                 {
                   "SecurityPolicy": {
                     "resource_type": "SecurityPolicy",
-                    "id": "K8S-Begin",
-                    "display_name": "K8S-Begin",
+                    "id": "k8s-begin",
+                    "display_name": "k8s-begin",
                     "parent_path": "/infra/domains/default",
                     "children": [],
                     "marked_for_delete": false,
@@ -59,8 +59,8 @@
             "IpAddressBlock": {
               "cidr": "10.192.0.0/16",
               "resource_type": "IpAddressBlock",
-              "id": "K8S-NOSNAT-IP-BLOCK",
-              "parent_path": "/infra/ip-blocks/K8S-NOSNAT-IP-BLOCK",
+              "id": "k8s-nosnat-ip-block",
+              "parent_path": "/infra/ip-blocks/k8s-nosnat-ip-block",
               "children": [],
               "marked_for_delete": false
             },
@@ -70,8 +70,8 @@
             "IpAddressBlock": {
               "cidr": "172.31.0.0/16",
               "resource_type": "IpAddressBlock",
-              "id": "K8S-POD-IP-BLOCK",
-              "parent_path": "/infra/ip-blocks/K8S-POD-IP-BLOCK",
+              "id": "k8s-pod-ip-block",
+              "parent_path": "/infra/ip-blocks/k8s-pod-ip-block",
               "children": [],
               "marked_for_delete": false
             },
@@ -80,8 +80,8 @@
         {
             "IpAddressPool": {
                 "resource_type": "IpAddressPool",
-                "id": "K8S-NAT-POOL",
-                "parent_path": "/infra/ip-pools/K8S-NAT-POOL",
+                "id": "k8s-nat-pool",
+                "parent_path": "/infra/ip-pools/k8s-nat-pool",
                 "children": [
                     {
                         "IpAddressPoolSubnet": {
@@ -95,7 +95,7 @@
                             ],
                             "id": "10.190.11-subnet",
                             "resource_type": "IpAddressPoolStaticSubnet",
-                            "parent_path": "/infra/ip-pools/K8S-NAT-POOL",
+                            "parent_path": "/infra/ip-pools/k8s-nat-pool",
                             "children": [],
                             "marked_for_delete": false
                         },
@@ -111,8 +111,8 @@
         {
             "IpAddressPool": {
                 "resource_type": "IpAddressPool",
-                "id": "K8S-LB-POOL",
-                "parent_path": "/infra/ip-pools/K8S-LB-POOL",
+                "id": "k8s-lb-pool",
+                "parent_path": "/infra/ip-pools/k8s-lb-pool",
                 "children": [
                     {
                         "IpAddressPoolSubnet": {
@@ -126,7 +126,7 @@
                             ],
                             "id": "10.190.10-subnet",
                             "resource_type": "IpAddressPoolStaticSubnet",
-                            "parent_path": "/infra/ip-pools/K8S-LB-POOL",
+                            "parent_path": "/infra/ip-pools/k8s-lb-pool",
                             "children": [],
                             "marked_for_delete": false
                         },
@@ -144,8 +144,8 @@
                 "type": "DISCONNECTED",
                 "transport_zone_path": "/infra/sites/default/enforcement-points/default/transport-zones/12d25875-7960-4ceb-91f1-f39a24a57014",
                 "resource_type": "Segment",
-                "id": "K8S-NodeTransport",
-                "parent_path": "/infra/segments/K8S-NodeTransport"
+                "id": "k8s-nodetransport",
+                "parent_path": "/infra/segments/k8s-nodetransport"
             },
             "resource_type": "ChildSegment",
             "marked_for_delete": false
@@ -160,8 +160,8 @@
                     "TIER1_IPSEC_LOCAL_ENDPOINT"
                 ],
                 "resource_type": "Tier1",
-                "id": "T1-K8S-NodeManagement",
-                "parent_path": "/infra/tier-1s/T1-K8S-NodeManagement",
+                "id": "t1-k8s-nodemanagement",
+                "parent_path": "/infra/tier-1s/t1-k8s-nodemanagement",
                 "children": [
                     {
                         "resource_type": "ChildSegment",
@@ -174,9 +174,9 @@
                                     "network": "10.190.22.0/24"
                                 }
                             ],
-                            "connectivity_path": "/infra/tier-1s/T1-K8S-NodeManagement",
+                            "connectivity_path": "/infra/tier-1s/t1-k8s-nodemanagement",
                             "transport_zone_path": "/infra/sites/default/enforcement-points/default/transport-zones/12d25875-7960-4ceb-91f1-f39a24a57014",
-                            "id": "K8S-NodeManagement",
+                            "id": "k8s-nodemanagement",
                             "children": []
                         }
                     }
