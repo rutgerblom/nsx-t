@@ -3,6 +3,17 @@
     "children": [
         {
             "IpAddressBlock": {
+              "cidr": "10.192.0.0/16",
+              "resource_type": "IpAddressBlock",
+              "id": "K8S-NOSNAT-IP-BLOCK",
+              "parent_path": "/infra/ip-blocks/K8S-NOSNAT-IP-BLOCK",
+              "children": [],
+              "marked_for_delete": false
+            },
+            "resource_type": "ChildIpAddressBlock"
+          },
+        {
+            "IpAddressBlock": {
               "cidr": "172.31.0.0/16",
               "resource_type": "IpAddressBlock",
               "id": "K8S-POD-IP-BLOCK",
@@ -10,7 +21,7 @@
               "children": [],
               "marked_for_delete": false
             },
-            "resource_type": "ChildIpAddressBlock",
+            "resource_type": "ChildIpAddressBlock"
           },
         {
             "IpAddressPool": {

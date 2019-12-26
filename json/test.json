@@ -1,0 +1,684 @@
+{
+    "Domain": {
+      "resource_type": "Domain",
+      "id": "default",
+      "display_name": "default",
+      "path": "/infra/domains/default",
+      "relative_path": "default",
+      "parent_path": "/infra/domains/default",
+      "children": [
+        {
+          "SecurityPolicy": {
+            "resource_type": "SecurityPolicy",
+            "id": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "display_name": "K8S-End",
+            "path": "/infra/domains/default/security-policies/31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "relative_path": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 5,
+            "category": "Environment",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "scope": [
+              "ANY"
+            ],
+            "_create_user": "admin",
+            "_create_time": 1577364603777,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1577364603777,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildSecurityPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "SecurityPolicy": {
+            "resource_type": "SecurityPolicy",
+            "id": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "display_name": "K8S-Begin",
+            "path": "/infra/domains/default/security-policies/2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "relative_path": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 2,
+            "category": "Environment",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "scope": [
+              "ANY"
+            ],
+            "_create_user": "admin",
+            "_create_time": 1577364603757,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1577364603757,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildSecurityPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "GatewayPolicy": {
+            "resource_type": "GatewayPolicy",
+            "id": "Policy_Default_Infra",
+            "display_name": "Policy_Default_Infra",
+            "description": "Policy_Default_Infra",
+            "path": "/infra/domains/default/gateway-policies/Policy_Default_Infra",
+            "relative_path": "Policy_Default_Infra",
+            "parent_path": "/infra/domains/default",
+            "children": [
+              {
+                "Rule": {
+                  "action": "ALLOW",
+                  "resource_type": "Rule",
+                  "id": "T0-tier0-default_blacklist_rule",
+                  "display_name": "T0",
+                  "description": "T0",
+                  "path": "/infra/domains/default/gateway-policies/Policy_Default_Infra/rules/T0-tier0-default_blacklist_rule",
+                  "relative_path": "T0-tier0-default_blacklist_rule",
+                  "parent_path": "/infra/domains/default/gateway-policies/Policy_Default_Infra",
+                  "children": [],
+                  "marked_for_delete": false,
+                  "sequence_number": 100,
+                  "sources_excluded": false,
+                  "destinations_excluded": false,
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "services": [
+                    "ANY"
+                  ],
+                  "profiles": [
+                    "ANY"
+                  ],
+                  "logged": false,
+                  "scope": [
+                    "/infra/tier-0s/T0"
+                  ],
+                  "disabled": false,
+                  "direction": "IN_OUT",
+                  "_create_user": "system",
+                  "_create_time": 1576956423577,
+                  "_last_modified_user": "system",
+                  "_last_modified_time": 1576956423577,
+                  "_system_owned": false,
+                  "_protection": "NOT_PROTECTED",
+                  "_revision": 0
+                },
+                "resource_type": "ChildRule",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              },
+              {
+                "Rule": {
+                  "action": "ALLOW",
+                  "resource_type": "Rule",
+                  "id": "T1-K8S-NodeManagement-tier1-default_blacklist_rule",
+                  "display_name": "T1-K8S-NodeManagement",
+                  "description": "T1-K8S-NodeManagement",
+                  "path": "/infra/domains/default/gateway-policies/Policy_Default_Infra/rules/T1-K8S-NodeManagement-tier1-default_blacklist_rule",
+                  "relative_path": "T1-K8S-NodeManagement-tier1-default_blacklist_rule",
+                  "parent_path": "/infra/domains/default/gateway-policies/Policy_Default_Infra",
+                  "children": [],
+                  "marked_for_delete": false,
+                  "sequence_number": 200,
+                  "sources_excluded": false,
+                  "destinations_excluded": false,
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "services": [
+                    "ANY"
+                  ],
+                  "profiles": [
+                    "ANY"
+                  ],
+                  "logged": false,
+                  "scope": [
+                    "/infra/tier-1s/T1-K8S-NodeManagement"
+                  ],
+                  "disabled": false,
+                  "direction": "IN_OUT",
+                  "_create_user": "system",
+                  "_create_time": 1577363531226,
+                  "_last_modified_user": "system",
+                  "_last_modified_time": 1577363531226,
+                  "_system_owned": false,
+                  "_protection": "NOT_PROTECTED",
+                  "_revision": 0
+                },
+                "resource_type": "ChildRule",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "marked_for_delete": false,
+            "sequence_number": 2147433647,
+            "category": "Default",
+            "locked": false,
+            "lock_modified_time": 0,
+            "_create_user": "system",
+            "_create_time": 1571694171457,
+            "_last_modified_user": "system",
+            "_last_modified_time": 1571694171457,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGatewayPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "GatewayPolicy": {
+            "resource_type": "GatewayPolicy",
+            "id": "771dbaf0-1e9c-11ea-8c5e-3f223b155b3e",
+            "display_name": "New Policy",
+            "path": "/infra/domains/default/gateway-policies/771dbaf0-1e9c-11ea-8c5e-3f223b155b3e",
+            "relative_path": "771dbaf0-1e9c-11ea-8c5e-3f223b155b3e",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 10,
+            "category": "LocalGatewayRules",
+            "stateful": true,
+            "locked": true,
+            "lock_modified_by": "admin",
+            "comments": "io",
+            "lock_modified_time": 1576346813314,
+            "_create_user": "admin",
+            "_create_time": 1576346813315,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1576346813315,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGatewayPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "RedirectionPolicy": {
+            "redirect_to": [],
+            "resource_type": "RedirectionPolicy",
+            "id": "DEFAULT-EW-REDIRECTION-POLICY",
+            "display_name": "DEFAULT-EW-REDIRECTION-POLICY",
+            "path": "/infra/domains/default/redirection-policies/DEFAULT-EW-REDIRECTION-POLICY",
+            "relative_path": "DEFAULT-EW-REDIRECTION-POLICY",
+            "parent_path": "/infra/domains/default",
+            "children": [
+              {
+                "RedirectionRule": {
+                  "action": "DO_NOT_REDIRECT",
+                  "resource_type": "RedirectionRule",
+                  "id": "DEFAULT-EW-REDIRECTION-RULE",
+                  "display_name": "DEFAULT-EW-REDIRECTION-RULE",
+                  "description": "Default redirection rule created by the system for performance improvement.",
+                  "path": "/infra/domains/default/redirection-policies/DEFAULT-EW-REDIRECTION-POLICY/rules/DEFAULT-EW-REDIRECTION-RULE",
+                  "relative_path": "DEFAULT-EW-REDIRECTION-RULE",
+                  "parent_path": "/infra/domains/default/redirection-policies/DEFAULT-EW-REDIRECTION-POLICY",
+                  "children": [],
+                  "marked_for_delete": false,
+                  "sequence_number": 0,
+                  "sources_excluded": false,
+                  "destinations_excluded": false,
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "services": [
+                    "ANY"
+                  ],
+                  "profiles": [
+                    "ANY"
+                  ],
+                  "logged": false,
+                  "scope": [
+                    "ANY"
+                  ],
+                  "disabled": false,
+                  "direction": "IN_OUT",
+                  "_create_user": "system",
+                  "_create_time": 1571582170996,
+                  "_last_modified_user": "system",
+                  "_last_modified_time": 1571582170996,
+                  "_system_owned": true,
+                  "_protection": "NOT_PROTECTED",
+                  "_revision": 0
+                },
+                "resource_type": "ChildRedirectionRule",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "marked_for_delete": false,
+            "sequence_number": 2147453647,
+            "category": "Application",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "_create_user": "system",
+            "_create_time": 1571582170968,
+            "_last_modified_user": "system",
+            "_last_modified_time": 1571582170968,
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildRedirectionPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "SecurityPolicy": {
+            "resource_type": "SecurityPolicy",
+            "id": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "display_name": "K8S-End",
+            "path": "/infra/domains/default/security-policies/31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "relative_path": "31784510-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 5,
+            "category": "Environment",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "scope": [
+              "ANY"
+            ],
+            "_create_user": "admin",
+            "_create_time": 1577364603777,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1577364603777,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildSecurityPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "SecurityPolicy": {
+            "resource_type": "SecurityPolicy",
+            "id": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "display_name": "K8S-Begin",
+            "path": "/infra/domains/default/security-policies/2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "relative_path": "2ef0fdf0-27de-11ea-8aaa-cb6ce3f7cdd3",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "sequence_number": 2,
+            "category": "Environment",
+            "stateful": true,
+            "locked": false,
+            "lock_modified_time": 0,
+            "scope": [
+              "ANY"
+            ],
+            "_create_user": "admin",
+            "_create_time": 1577364603757,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1577364603757,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildSecurityPolicy",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "ip_addresses": [
+                  "192.168.10.0/24"
+                ],
+                "resource_type": "IPAddressExpression",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "subnet-sddc",
+            "display_name": "subnet-sddc",
+            "path": "/infra/domains/default/groups/subnet-sddc",
+            "relative_path": "subnet-sddc",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1571696587494,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1571696587494,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "member_type": "VirtualMachine",
+                "external_ids": [
+                  "503004f6-8257-f21e-e71b-d5f5b42d2ced",
+                  "503008e7-d19c-de28-f4a8-9021bb1dfce2",
+                  "503012bf-d36e-39d9-a623-f2a4b1df15c5",
+                  "50301896-9166-6ba7-bbfe-9c20b549b91d",
+                  "503023fd-fcdb-5bdc-7dd1-93c7fad16e5c",
+                  "5030241e-791c-4c59-d3f4-06cb96eaa35d",
+                  "5030287b-fe88-a2f5-0f1d-5e04a1c9f8b1",
+                  "50302dae-f49a-1315-8843-9e1472e6d749",
+                  "50302df1-92a4-9a5a-1e07-a213dd7fd7d0",
+                  "5030334c-9398-a139-e273-cce44b16c6e9",
+                  "503041fe-941c-4eae-69a9-d1843e4598c7",
+                  "50305b08-fce0-8cd3-3ed2-b26de2cf464b",
+                  "50305b80-564d-373f-df03-0d30f4d73e64",
+                  "5030695b-3c3e-0e4b-baeb-62487d600c7b",
+                  "50306990-b063-2f19-0c35-fa5f33e5d4f9",
+                  "50306e63-1e64-5ea0-c754-623596949685",
+                  "50307595-c044-95e8-5073-8d80d2ed0c61",
+                  "5030929c-606b-29d4-bfc6-160a84da58e5",
+                  "5030b257-b8ff-2067-2b44-944c6ad87f99",
+                  "5030b94e-da5f-3d85-c232-74d5559103f2",
+                  "5030c35f-9edb-8b59-ac76-cea83f6df359",
+                  "5030ca1f-0497-f39d-a8d2-65253e7e9636",
+                  "5030ca3b-a995-efcd-4084-120636b5140e",
+                  "5030d553-8023-67fc-412b-7f6030637739",
+                  "5030d639-83b7-83f8-0c1f-f1a2b1f9f57b",
+                  "5030dfed-5a30-fff5-f467-16f354d5bd73",
+                  "52a123f2-f9a2-0a1a-522d-31f6c068a3ed"
+                ],
+                "resource_type": "ExternalIDExpression",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "excluded-vms",
+            "display_name": "excluded-vms",
+            "path": "/infra/domains/default/groups/excluded-vms",
+            "relative_path": "excluded-vms",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1571696064024,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1571923732775,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 1
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "member_type": "VirtualMachine",
+                "external_ids": [
+                  "50304f60-8820-80d8-0be4-07c74fab9b75"
+                ],
+                "resource_type": "ExternalIDExpression",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "vm-server2",
+            "display_name": "vm-server2",
+            "path": "/infra/domains/default/groups/vm-server2",
+            "relative_path": "vm-server2",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1576269469651,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1576269469651,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "member_type": "VirtualMachine",
+                "key": "Tag",
+                "operator": "EQUALS",
+                "value": "windows",
+                "resource_type": "Condition",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "windows-vms",
+            "display_name": "windows-vms",
+            "path": "/infra/domains/default/groups/windows-vms",
+            "relative_path": "windows-vms",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1571696678132,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1571696678132,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "ip_addresses": [
+                  "192.168.0.0/16",
+                  "10.0.0.0/8",
+                  "172.16.0.0/12"
+                ],
+                "resource_type": "IPAddressExpression",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "rfc1918",
+            "display_name": "rfc1918",
+            "path": "/infra/domains/default/groups/rfc1918",
+            "relative_path": "rfc1918",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1571771588836,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1571771588836,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        },
+        {
+          "Group": {
+            "expression": [
+              {
+                "member_type": "VirtualMachine",
+                "key": "Tag",
+                "operator": "EQUALS",
+                "value": "addc",
+                "resource_type": "Condition",
+                "marked_for_delete": false,
+                "_protection": "NOT_PROTECTED"
+              }
+            ],
+            "resource_type": "Group",
+            "id": "domain-controllers",
+            "display_name": "domain-controllers",
+            "path": "/infra/domains/default/groups/domain-controllers",
+            "relative_path": "domain-controllers",
+            "parent_path": "/infra/domains/default",
+            "children": [],
+            "marked_for_delete": false,
+            "_create_user": "admin",
+            "_create_time": 1571696552547,
+            "_last_modified_user": "admin",
+            "_last_modified_time": 1571696552547,
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+          },
+          "resource_type": "ChildGroup",
+          "marked_for_delete": false,
+          "_protection": "NOT_PROTECTED"
+        }
+      ],
+      "marked_for_delete": false,
+      "_create_user": "system",
+      "_create_time": 1571582169952,
+      "_last_modified_user": "system",
+      "_last_modified_time": 1571582169952,
+      "_system_owned": true,
+      "_protection": "NOT_PROTECTED",
+      "_revision": 0
+    },
+    "resource_type": "ChildDomain",
+    "marked_for_delete": false,
+    "_protection": "NOT_PROTECTED"
+  },
+  {
+    "Domain": {
+      "resource_type": "Domain",
+      "id": "k8s-cluster",
+      "display_name": "k8s-cluster",
+      "tags": [
+        {
+          "scope": "ncp/cluster_domain",
+          "tag": "true"
+        },
+        {
+          "scope": "ncp/cluster",
+          "tag": "k8s-cluster"
+        }
+      ],
+      "path": "/infra/domains/k8s-cluster",
+      "relative_path": "k8s-cluster",
+      "parent_path": "/infra/domains/k8s-cluster",
+      "children": [],
+      "marked_for_delete": false,
+      "_create_user": "admin",
+      "_create_time": 1577057146041,
+      "_last_modified_user": "admin",
+      "_last_modified_time": 1577057146041,
+      "_system_owned": false,
+      "_protection": "NOT_PROTECTED",
+      "_revision": 0
+    },
+    "resource_type": "ChildDomain",
+    "marked_for_delete": false,
+    "_protection": "NOT_PROTECTED"
+  },
+  {
+    "Domain": {
+      "resource_type": "Domain",
+      "id": "kubernetes",
+      "display_name": "kubernetes",
+      "tags": [
+        {
+          "scope": "ncp/cluster_domain",
+          "tag": "true"
+        },
+        {
+          "scope": "ncp/cluster",
+          "tag": "kubernetes"
+        }
+      ],
+      "path": "/infra/domains/kubernetes",
+      "relative_path": "kubernetes",
+      "parent_path": "/infra/domains/kubernetes",
+      "children": [],
+      "marked_for_delete": false,
+      "_create_user": "admin",
+      "_create_time": 1575503918471,
+      "_last_modified_user": "admin",
+      "_last_modified_time": 1575503918471,
+      "_system_owned": false,
+      "_protection": "NOT_PROTECTED",
+      "_revision": 0
+    },
+    "resource_type": "ChildDomain",
+    "marked_for_delete": false,
+    "_protection": "NOT_PROTECTED"
+  },
+  {
+    "Domain": {
+      "resource_type": "Domain",
+      "id": "k8s-cluster1",
+      "display_name": "k8s-cluster1",
+      "tags": [
+        {
+          "scope": "ncp/cluster_domain",
+          "tag": "true"
+        },
+        {
+          "scope": "ncp/cluster",
+          "tag": "k8s-cluster1"
+        }
+      ],
+      "path": "/infra/domains/k8s-cluster1",
+      "relative_path": "k8s-cluster1",
+      "parent_path": "/infra/domains/k8s-cluster1",
+      "children": [],
+      "marked_for_delete": false,
+      "_create_user": "admin",
+      "_create_time": 1575845513056,
+      "_last_modified_user": "admin",
+      "_last_modified_time": 1575845513056,
+      "_system_owned": false,
+      "_protection": "NOT_PROTECTED",
+      "_revision": 0
+    },
+    "resource_type": "ChildDomain",
+    "marked_for_delete": false,
+    "_protection": "NOT_PROTECTED"
+  },
