@@ -2,6 +2,17 @@
     "resource_type": "Infra",
     "children": [
         {
+            "IpAddressBlock": {
+              "cidr": "172.31.0.0/16",
+              "resource_type": "IpAddressBlock",
+              "id": "K8S-POD-IP-BLOCK",
+              "parent_path": "/infra/ip-blocks/K8S-POD-IP-BLOCK",
+              "children": [],
+              "marked_for_delete": false
+            },
+            "resource_type": "ChildIpAddressBlock",
+          },
+        {
             "IpAddressPool": {
                 "resource_type": "IpAddressPool",
                 "id": "K8S-NAT-POOL",
