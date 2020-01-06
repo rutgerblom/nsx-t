@@ -83,8 +83,8 @@
                                                     "dpd_profile_path": "/infra/ipsec-vpn-dpd-profiles/aws-dpd",
                                                     "compliance_suite": "NONE",
                                                     "connection_initiation_mode": "INITIATOR",
-                                                    "peer_address": "52.9.103.48",
-                                                    "peer_id": "52.9.103.48",
+                                                    "peer_address": "127.0.0.1",
+                                                    "peer_id": "127.0.0.1",
                                                     "psk": "VMware1!VMware1!"
                                                 },
                                                 "resource_type": "ChildIPSecVpnSession",
