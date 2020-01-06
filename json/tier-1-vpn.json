@@ -1,0 +1,180 @@
+{
+    "resource_type": "Infra",
+    "children": [
+        {
+            "Tier1": {
+                "tier0_path": "/infra/tier-0s/T0",
+                "failover_mode": "NON_PREEMPTIVE",
+                "enable_standby_relocation": false,
+                "route_advertisement_types": [
+                    "TIER1_CONNECTED",
+                    "TIER1_IPSEC_LOCAL_ENDPOINT"
+                ],
+                "resource_type": "Tier1",
+                "id": "t1",
+                "parent_path": "/infra/tier-1s/t1",
+                "children": [
+                    {
+                        "resource_type": "ChildSegment",
+                        "Segment": {
+                            "resource_type": "Segment",
+                            "type": "ROUTED",
+                            "subnets": [
+                                {
+                                    "gateway_address": "10.10.1.1/24",
+                                    "network": "10.10.1.0/24"
+                                }
+                            ],
+                            "connectivity_path": "/infra/tier-1s/segment-db",
+                            "transport_zone_path": "/infra/sites/default/enforcement-points/default/transport-zones/12d25875-7960-4ceb-91f1-f39a24a57014",
+                            "id": "segment-db",
+                            "children": []
+                        }
+                    },
+                    {
+                        "LocaleServices": {
+                            "edge_cluster_path": "/infra/sites/default/enforcement-points/default/edge-clusters/32cd640f-fa9d-452e-9e6f-aaa67c9d1dee",
+                            "resource_type": "LocaleServices",
+                            "id": "t1-locale-service-01",
+                            "parent_path": "/infra/tier-1s/t1",
+                            "children": [
+                                {
+                                    "IPSecVpnService": {
+                                        "enabled": true,
+                                        "ike_log_level": "INFO",
+                                        "resource_type": "IPSecVpnService",
+                                        "id": "nsx-aws",
+                                        "description": "Site-to-Site between NSX-T and AWS",
+                                        "parent_path": "/infra/tier-1s/t1/locale-services/t1-locale-service-01",
+                                        "children": [
+                                            {
+                                                "IPSecVpnSession": {
+                                                    "rules": [
+                                                        {
+                                                            "sources": [
+                                                                {
+                                                                    "subnet": "10.10.1.0/24"
+                                                                }
+                                                            ],
+                                                            "destinations": [
+                                                                {
+                                                                    "subnet": "172.16.1.0/24"
+                                                                }
+                                                            ],
+                                                            "logged": false,
+                                                            "enabled": true,
+                                                            "action": "PROTECT",
+                                                            "sequence_number": 0,
+                                                            "resource_type": "IPSecVpnRule",
+                                                            "id": "ipsecvpn-rule-01",
+                                                            "parent_path": "/infra/tier-1s/t1/locale-services/t1-locale-service-01/ipsec-vpn-services/nsx-aws/sessions/policybased-ipsec-session-01",
+                                                            "marked_for_delete": false
+                                                        }
+                                                    ],
+                                                    "resource_type": "PolicyBasedIPSecVpnSession",
+                                                    "id": "policybased-ipsec-session-01",
+                                                    "parent_path": "/infra/tier-1s/t1/locale-services/t1-locale-service-01/ipsec-vpn-services/nsx-aws",
+                                                    "marked_for_delete": false,
+                                                    "enabled": true,
+                                                    "local_endpoint_path": "/infra/tier-1s/t1/locale-services/t1-locale-service-01/ipsec-vpn-services/nsx-aws/local-endpoints/endpoint-01",
+                                                    "authentication_mode": "PSK",
+                                                    "ike_profile_path": "/infra/ipsec-vpn-ike-profiles/aws-ike",
+                                                    "tunnel_profile_path": "/infra/ipsec-vpn-tunnel-profiles/aws-ipsec",
+                                                    "dpd_profile_path": "/infra/ipsec-vpn-dpd-profiles/aws-dpd",
+                                                    "compliance_suite": "NONE",
+                                                    "connection_initiation_mode": "INITIATOR",
+                                                    "peer_address": "52.9.103.48",
+                                                    "peer_id": "52.9.103.48",
+                                                    "psk": "qF2JoXc1K3z05rNw9go_snZwciYXgdEL"
+                                                },
+                                                "resource_type": "ChildIPSecVpnSession",
+                                                "marked_for_delete": false
+                                            },
+                                            {
+                                                "IPSecVpnLocalEndpoint": {
+                                                    "local_address": "192.168.10.10",
+                                                    "local_id": "192.168.10.10",
+                                                    "resource_type": "IPSecVpnLocalEndpoint",
+                                                    "id": "endpoint-01",
+                                                    "parent_path": "/infra/tier-1s/t1/locale-services/t1-locale-service-01/ipsec-vpn-services/nsx-aws",
+                                                    "marked_for_delete": false
+                                                },
+                                                "resource_type": "ChildIPSecVpnLocalEndpoint",
+                                                "marked_for_delete": false
+                                            }
+                                        ],
+                                        "marked_for_delete": false
+                                    },
+                                    "resource_type": "ChildIPSecVpnService",
+                                    "marked_for_delete": false
+                                }
+                            ],
+                            "marked_for_delete": false
+                        },
+                        "resource_type": "ChildLocaleServices",
+                        "marked_for_delete": false
+                    }
+                ],
+                "marked_for_delete": false
+            },
+            "resource_type": "ChildTier1",
+            "marked_for_delete": false
+        },
+        {
+            "IPSecVpnTunnelProfile": {
+                "digest_algorithms": [
+                    "SHA1"
+                ],
+                "encryption_algorithms": [
+                    "AES_128"
+                ],
+                "enable_perfect_forward_secrecy": true,
+                "dh_groups": [
+                    "GROUP2"
+                ],
+                "sa_life_time": 3600,
+                "df_policy": "COPY",
+                "resource_type": "IPSecVpnTunnelProfile",
+                "id": "aws-ipsec",
+                "display_name": "aws-ipsec",
+                "parent_path": "/infra/ipsec-vpn-tunnel-profiles/aws-ipsec",
+                "marked_for_delete": false
+            },
+            "resource_type": "ChildIPSecVpnTunnelProfile",
+            "marked_for_delete": false
+        },
+        {
+            "IPSecVpnIkeProfile": {
+                "digest_algorithms": [
+                    "SHA1"
+                ],
+                "encryption_algorithms": [
+                    "AES_128"
+                ],
+                "ike_version": "IKE_V1",
+                "dh_groups": [
+                    "GROUP2"
+                ],
+                "sa_life_time": 28800,
+                "resource_type": "IPSecVpnIkeProfile",
+                "id": "aws-ike",
+                "parent_path": "/infra/ipsec-vpn-ike-profiles/aws-ike",
+                "marked_for_delete": false
+            },
+            "resource_type": "ChildIPSecVpnIkeProfile",
+            "marked_for_delete": false
+        },
+        {
+            "IPSecVpnDpdProfile": {
+                "enabled": true,
+                "dpd_probe_interval": 10,
+                "resource_type": "IPSecVpnDpdProfile",
+                "id": "aws-dpd",
+                "parent_path": "/infra/ipsec-vpn-dpd-profiles/aws-dpd",
+                "marked_for_delete": false
+            },
+            "resource_type": "ChildIPSecVpnDpdProfile",
+            "marked_for_delete": false
+        }
+    ]
+}
