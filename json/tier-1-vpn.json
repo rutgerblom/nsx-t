@@ -85,7 +85,7 @@
                                                     "connection_initiation_mode": "INITIATOR",
                                                     "peer_address": "52.9.103.48",
                                                     "peer_id": "52.9.103.48",
-                                                    "psk": "qF2JoXc1K3z05rNw9go_snZwciYXgdEL"
+                                                    "psk": "VMware1!VMware1!"
                                                 },
                                                 "resource_type": "ChildIPSecVpnSession",
                                                 "marked_for_delete": false
