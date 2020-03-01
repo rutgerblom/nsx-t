@@ -1,0 +1,12 @@
+{
+  "tags": [
+    {
+      "scope": "ncp/cluster",
+      "tag": "k8s-cluster"
+    },
+    {
+      "scope": "ncp/node_name",
+      "tag": "k8s-master"
+    }
+  ]
+  }
