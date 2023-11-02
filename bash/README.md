@@ -18,6 +18,6 @@ Edit ```~/git/nsx-t/bash/import_activate_certificate.sh``` and update the values
 * ```CERTIFICATE_NSX_DISPLAY_NAME```
 
 ## Usage
-After configuring the proper values for the variables mentioned above, run ```~/git/nsx-t/bash/import_activate_certificate.sh```. 
+After configuring the proper values for the variables listed above you simply run ```~/git/nsx-t/bash/import_activate_certificate.sh```. 
 The script will use the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
 
