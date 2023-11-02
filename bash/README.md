@@ -9,7 +9,13 @@ Using Ubuntu 22.04 machine:
 * ```chmod +x ~/git/nsx-t/bash/import_activate_certificate.sh```
 * Place the signed certificate (chain) and its key in a directory on the Ubuntu machine
 
-Modify the values for ```NSX_MANAGER```, ```NSX_USER```, ```NSX_PASSWORD```, ```CERTIFICATE_CHAIN```, ```PRIVATE_KEY```, and ```CERTIFICATE_NSX_DISPLAY_NAME``` in the ```~/git/nsx-t/bash/import_activate_certificate.sh``` file so that these match your environment.
+Edit ```~/git/nsx-t/bash/import_activate_certificate.sh``` and update the values for the below variables so that these match your environment:
+* ```NSX_MANAGER``` 
+* ```NSX_USER```
+* ```NSX_PASSWORD```
+* ```CERTIFICATE_CHAIN```
+* ```PRIVATE_KEY```
+* ```CERTIFICATE_NSX_DISPLAY_NAME```
 
 ## Usage
 After configuring the proper values for the variables mentioned above, run ```~/git/nsx-t/bash/import_activate_certificate.sh```. 
