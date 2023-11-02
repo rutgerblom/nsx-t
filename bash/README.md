@@ -1,8 +1,8 @@
 # import_activate_certificate.sh
-A bash script that imports and activates a TLS certificate for the NSX Manger API/UI.
+A bash script that imports and applies a signed API/UI TLS certificate on NSX Manager.
 
 ## Preparations
-On an Ubuntu 22.04 machine: 
+Using Ubuntu 22.04 machine: 
 
 * ```sudo apt update && sudo apt install git curl jq```
 * ```git clone https://github.com/rutgerblom/nsx-t.git ~/git/nsx-t```
