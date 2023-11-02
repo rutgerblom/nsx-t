@@ -49,13 +49,13 @@ METHOD="POST"
 RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER:$NSX_PASSWORD" -H "content-type: application/json")
 
 
-# Create API call that applies the API/UI TLS certificate on NSX Manager node 02
+# Create API call that applies the API/UI TLS certificate on NSX Manager node 02. If there isn't a node 02 this is no problem
 URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_02"
 METHOD="POST"
 RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER:$NSX_PASSWORD" -H "content-type: application/json")
 
 
-# Create API call that applies the API/UI TLS certificate on NSX Manager node 03
+# Create API call that applies the API/UI TLS certificate on NSX Manager node 03. If there isn't a node 03 this is no problem
 URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_03"
 METHOD="POST"
 RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER:$NSX_PASSWORD" -H "content-type: application/json")
