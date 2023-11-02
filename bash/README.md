@@ -1,5 +1,5 @@
 # import_apply_certificate.sh
-A bash script that imports and applies a signed API/UI TLS certificate on NSX Manager.
+A bash script that imports and applies a signed TLS certificate for the NSX Manager API/UI.
 
 ## Preparations
 Using an Ubuntu 22.04 machine: 
