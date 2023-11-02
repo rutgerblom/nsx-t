@@ -17,8 +17,8 @@ CERTIFICATE_NSX_DISPLAY_NAME="Pod-240-NSXT-LM"     # The name of the certificate
 # Create API call that imports the API/UI TLS certificate to NSX Manager
 URI="/api/v1/trust-management/certificates?action=import"
 METHOD="POST"
-CERTIFICATE_CHAIN_PEM=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' $CERTIFICATE_CHAIN)  # Creates a "one-line" PEM suitsable for the request body
-PRIVATE_KEY_PEM=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' $PRIVATE_KEY)              # Creates a "one-line" key suitsable for the request body
+CERTIFICATE_CHAIN_PEM=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' $CERTIFICATE_CHAIN)  # Creates a "one-line" PEM suitable for the request body
+PRIVATE_KEY_PEM=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' $PRIVATE_KEY)              # Creates a "one-line" key suitable for the request body
 
 # Template the request body
 cat >/tmp/body.json <<EOF
