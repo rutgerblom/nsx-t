@@ -10,7 +10,9 @@ CERTIFICATE_CHAIN="$HOME/certs/certificate.crt"    # Should contain the entire c
 PRIVATE_KEY="$HOME/certs/private.key"           
 CERTIFICATE_NSX_DISPLAY_NAME="Pod-240-NSXT-LM"     # The name of the certificate as displayed in NSX Manager
 
+
 ############################################### No need to make modifications beyond here ############################################################
+
 
 # Create API call that imports the API/UI TLS certificate to NSX Manager
 URI="/api/v1/trust-management/certificates?action=import"
