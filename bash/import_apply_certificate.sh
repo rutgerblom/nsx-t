@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Global Parameters -- Change these so that they match your environment
-NSX_MANAGER="Pod-240-NSXT-LM.SDDC.Lab"             # FQDN or IP of the NSX Manager
+NSX_MANAGER="Pod-240-NSXT-LM.SDDC.Lab"             # FQDN or IP address of the NSX Manager
 NSX_USER="admin"
 NSX_PASSWORD="VMware1!VMware1!"
 
