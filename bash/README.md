@@ -21,7 +21,7 @@ Edit ```~/git/nsx-t/bash/import_apply_certificate.sh``` and update the values fo
 After configuring the proper values for the variables listed above you simply run ```~/git/nsx-t/bash/import_apply_certificate.sh```. 
 The script will leverage the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
 
-## Example workflow using easy-rsa CA
+### Example workflow using easy-rsa CA
 1. Prepare an OpenSSL .cnf file. An example .cnf file can be found [here](nsx_oslo.cnf).
 2. Create a private key: ```openssl genrsa -out /tmp/pod-240-nsxt-lm.key 2048```.
 3. Create a certificate signing request (CSR): ```openssl req -new -nodes -out /tmp/pod-240-nsxt-lm.csr -keyout /tmp/pod-240-nsxt-lm.key -config ./nsx_oslo.cnf```.
