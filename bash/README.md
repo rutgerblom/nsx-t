@@ -2,7 +2,7 @@
 A bash script that imports and applies a signed API/UI TLS certificate on NSX Manager.
 
 ## Preparations
-Using Ubuntu 22.04 machine: 
+Using an Ubuntu 22.04 machine: 
 
 * ```sudo apt update && sudo apt install git curl jq```
 * ```git clone https://github.com/rutgerblom/nsx-t.git ~/git/nsx-t```
