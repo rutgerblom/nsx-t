@@ -28,14 +28,14 @@ cat >/tmp/body.json <<EOF
 EOF
 
 export BODY=$(cat /tmp/body.json)
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -H "content-type: application/json" -d "$BODY")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json" -d "$BODY")
 export CERT_ID=$(echo $RESPONSE | jq -r '.results[] | {id} | join(" ")')
 
 
-# API call to fetch NSX Manager node UUIDs (max 3 nodes)
+# API call to fetch NSX Manager node UUIDs (max 3 nodes, non existing nodes will have value "null")
 export URI="/api/v1/cluster"
 export METHOD="GET"
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD")
 export NODE_UUID_01=$(echo $RESPONSE | jq -r '.nodes[0].node_uuid')
 export NODE_UUID_02=$(echo $RESPONSE | jq -r '.nodes[1].node_uuid')
 export NODE_UUID_03=$(echo $RESPONSE | jq -r '.nodes[2].node_uuid')
@@ -44,22 +44,22 @@ export NODE_UUID_03=$(echo $RESPONSE | jq -r '.nodes[2].node_uuid')
 # API call to apply certificate on NSX Manager node 01
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_01"
 export METHOD="POST"
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -H "content-type: application/json")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
 # API call to apply certificate on NSX Manager node 02
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_02"
 export METHOD="POST"
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -H "content-type: application/json")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
 # API call to apply certificate on NSX Manager node 03
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_03"
 export METHOD="POST"
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -H "content-type: application/json")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
 # API call to apply certificate on NSX Manager VIP (MGMT_CLUSTER)
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=MGMT_CLUSTER"
 export METHOD="POST"
-export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -H "content-type: application/json")
+export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
