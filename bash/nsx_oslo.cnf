@@ -1,0 +1,35 @@
+[ req ]
+default_bits        = 2048
+default_keyfile     = server-key.pem
+distinguished_name  = subject
+req_extensions      = req_ext
+string_mask         = utf8only
+
+[ subject ]
+countryName                 = Country Name (2 letter code)
+countryName_default         = NO
+stateOrProvinceName         = State or Province Name (full name)
+stateOrProvinceName_default = Oslo
+localityName                = Locality Name (eg, city)
+localityName_default        = Oslo
+organizationName            = Organization Name (eg, company)
+organizationName_default    = SDDC.Lab
+commonName                  = Common Name (e.g. server FQDN or YOUR name)
+commonName_default          = osl-nsxt-lm.sddc.lab
+emailAddress                = Email Address
+emailAddress_default        = info@sddc.lab
+
+[ req_ext ]
+subjectKeyIdentifier = hash
+basicConstraints     = CA:FALSE
+keyUsage             = digitalSignature, keyEncipherment
+subjectAltName       = @alternate_names
+nsComment            = "OpenSSL Generated Certificate"
+extendedKeyUsage     = serverAuth, clientAuth
+
+[ alternate_names ]
+DNS.1       = osl-nsxt-lm.sddc.lab
+DNS.2       = osl-nsxt-lm
+DNS.3       = 10.203.220.11
+DNS.4       = osl-nsxt-lm-1.sddc.lab
+DNS.5       = 10.203.220.11
