@@ -13,7 +13,7 @@ export CERTIFICATE_NSX_DISPLAY_NAME="cph-nsxt-lm"
 
 ############################################### No Need to make modifications beyond here ############################################################
 
-# API call to import the certificate to NSX Manager
+# API call to import the API/UI TLS certificate to NSX Manager
 export URI="/api/v1/trust-management/certificates?action=import"
 export METHOD="POST"
 export CERTIFICATE_CHAIN_PEM=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' $CERTIFICATE_CHAIN)
@@ -41,25 +41,25 @@ export NODE_UUID_02=$(echo $RESPONSE | jq -r '.nodes[1].node_uuid')
 export NODE_UUID_03=$(echo $RESPONSE | jq -r '.nodes[2].node_uuid')
 
 
-# API call to apply certificate on NSX Manager node 01
+# API call to apply the API/UI TLS certificate on NSX Manager node 01
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_01"
 export METHOD="POST"
 export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
-# API call to apply certificate on NSX Manager node 02
+# API call to apply the API/UI TLS certificate on NSX Manager node 02
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_02"
 export METHOD="POST"
 export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
-# API call to apply certificate on NSX Manager node 03
+# API call to apply the API/UI TLS certificate on NSX Manager node 03
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=API&node_id=$NODE_UUID_03"
 export METHOD="POST"
 export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
 
 
-# API call to apply certificate on NSX Manager VIP (MGMT_CLUSTER)
+# API call to apply the API/UI TLS certificate on NSX Manager VIP (MGMT_CLUSTER)
 export URI="/api/v1/trust-management/certificates/$CERT_ID?action=apply_certificate&service_type=MGMT_CLUSTER"
 export METHOD="POST"
 export RESPONSE=$(curl -v -k -X $METHOD "https://$NSX_MANAGER$URI" -u "$NSX_USER" -p "$NSX_PASSWORD" -H "content-type: application/json")
