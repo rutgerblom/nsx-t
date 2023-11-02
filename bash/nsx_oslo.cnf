@@ -32,4 +32,4 @@ DNS.1       = pod-240-nsxt-lm.sddc.lab
 DNS.2       = pod-240-nsxt-lm
 DNS.3       = 10.203.240.11
 DNS.4       = pod-240-nsxt-lm-1.sddc.lab
-DNS.5       = 10.203.240.11
+DNS.5       = 10.203.240.12
