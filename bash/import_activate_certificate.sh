@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Global Parameters -- change these so that they match your environment
+# Global Parameters -- Change these so that they match your environment
 export NSX_MANAGER="cph-nsxt-lm.sddc.lab"
 export NSX_USER="admin"
 export NSX_PASSWORD="VMware1!VMware1!"
 
 
-# Certificate parameters -- change these so that they match your environment
+# Certificate parameters -- Change these so that they match your environment
 export CERTIFICATE_CHAIN="$HOME/certs/certificate.crt"
 export PRIVATE_KEY="$HOME/certs/private.key"
 export CERTIFICATE_NSX_DISPLAY_NAME="cph-nsxt-lm"
