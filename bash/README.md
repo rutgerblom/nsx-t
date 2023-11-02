@@ -18,7 +18,7 @@ Edit ```~/git/nsx-t/bash/import_apply_certificate.sh``` and update the values fo
 * ```CERTIFICATE_NSX_DISPLAY_NAME```
 
 ## Usage
-After configuring the proper values for the variables listed above you simply run ```~/git/nsx-t/bash/import_apply_certificate.sh```. 
+After the preparations are completed you simply run: ```~/git/nsx-t/bash/import_apply_certificate.sh```. 
 The script will leverage the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
 
 ### Example workflow using easy-rsa CA
