@@ -6,7 +6,7 @@ NSX_USER="admin"
 NSX_PASSWORD="VMware1!VMware1!"
 
 # Certificate parameters -- Change these so that they match your environment/requirements
-CERTIFICATE_CHAIN="$HOME/certs/certificate.crt"    # Should contain the entire certificate chain (i.e. cert > intermediate > root)
+CERTIFICATE_CHAIN="$HOME/certs/certificate.crt"    # This file must contain the entire certificate chain (i.e. cert > intermediate > root)
 PRIVATE_KEY="$HOME/certs/private.key"           
 CERTIFICATE_NSX_DISPLAY_NAME="Pod-240-NSXT-LM"     # The name of the certificate as displayed in NSX Manager
 
