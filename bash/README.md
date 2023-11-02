@@ -12,5 +12,6 @@ Using Ubuntu 22.04 machine:
 Modify the values for ```NSX_MANAGER```, ```NSX_USER```, ```NSX_PASSWORD```, ```CERTIFICATE_CHAIN```, ```PRIVATE_KEY```, and ```CERTIFICATE_NSX_DISPLAY_NAME``` in the ```~/git/nsx-t/bash/import_activate_certificate.sh``` file so that these match your environment.
 
 ## Usage
-Run ```~/git/nsx-t/bash/import_activate_certificate.sh```. The script will use the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
+After configuring the proper values for the variables mentioned above, run ```~/git/nsx-t/bash/import_activate_certificate.sh```. 
+The script will use the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
 
