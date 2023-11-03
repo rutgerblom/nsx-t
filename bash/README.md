@@ -13,9 +13,9 @@ Edit ```~/git/nsx-t/bash/import_apply_certificate.sh``` and update the values fo
 * ```NSX_MANAGER``` 
 * ```NSX_USER```
 * ```NSX_PASSWORD```
-* ```CERTIFICATE_CHAIN```
-* ```PRIVATE_KEY```
-* ```CERTIFICATE_NSX_DISPLAY_NAME```
+* ```NSX_CERTIFICATE_CHAIN```
+* ```NSX_CERTIFICATE_PRIVATE_KEY```
+* ```NSX_CERTIFICATE_DISPLAY_NAME```
 
 ## Usage
 After the preparations are completed you simply run: ```~/git/nsx-t/bash/import_apply_certificate.sh```. 
