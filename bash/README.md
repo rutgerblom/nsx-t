@@ -7,7 +7,7 @@ Using an Ubuntu 22.04 machine:
 * ```sudo apt update && sudo apt install git curl jq```
 * ```git clone https://github.com/rutgerblom/nsx-t.git ~/git/nsx-t```
 * ```chmod +x ~/git/nsx-t/bash/import_apply_certificate.sh```
-* Copy the certificate (chain) and its key to a working directory on the Ubuntu machine
+* Copy the certificate (chain) and its key to a working directory on the Ubuntu machine (```/tmp```for example).
 
 Export variables with the values that are relevant for your environment. For example:
 ```
