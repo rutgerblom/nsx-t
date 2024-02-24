@@ -10,12 +10,14 @@ Using an Ubuntu 22.04 machine:
 * Copy the certificate (chain) and its key to a working directory on the Ubuntu machine
 
 Export variables with the values that are relevant for your environment. For example:
-```export NSX_MANAGER="Pod-240-NSXT-LM.SDDC.Lab"``` 
-```export NSX_USER="admin"```
-```export NSX_PASSWORD="VMware1!VMware1!"```
-```export NSX_CERTIFICATE_CHAIN="/tmp/pod-240-nsxt-lm.crt"```
-```export NSX_CERTIFICATE_PRIVATE_KEY="/tmp/pod-240-nsxt-lm.key"```
-```export NSX_CERTIFICATE_DISPLAY_NAME="Pod-240-NSXT-LM"```
+```
+export NSX_MANAGER="Pod-240-NSXT-LM.SDDC.Lab"
+export NSX_USER="admin"
+export NSX_PASSWORD="VMware1!VMware1!"
+export NSX_CERTIFICATE_CHAIN="/tmp/pod-240-nsxt-lm.crt"
+export NSX_CERTIFICATE_PRIVATE_KEY="/tmp/pod-240-nsxt-lm.key"
+export NSX_CERTIFICATE_DISPLAY_NAME="Pod-240-NSXT-LM"
+```
 
 ## Usage
 After the preparations are completed you simply run: ```~/git/nsx-t/bash/import_apply_certificate.sh```. 
