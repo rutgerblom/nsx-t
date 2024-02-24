@@ -22,9 +22,9 @@ After the preparations are completed you simply run: ```~/git/nsx-t/bash/import_
 The script will leverage the NSX REST API to import the TLS certificate and then apply it to the NSX Manager nodes and VIP. 
 
 ### Example workflow using easy-rsa CA
-1. Prepare an OpenSSL .cnf file. An example .cnf file can be found [here](nsx_oslo.cnf).
+1. Prepare an OpenSSL .cnf file. An example .cnf file can be found [here](nsx.cnf).
 2. Create a private key: ```openssl genrsa -out /tmp/pod-240-nsxt-lm.key 2048```.
-3. Create a certificate signing request (CSR): ```openssl req -new -nodes -out /tmp/pod-240-nsxt-lm.csr -keyout /tmp/pod-240-nsxt-lm.key -config ./nsx_oslo.cnf```.
+3. Create a certificate signing request (CSR): ```openssl req -new -nodes -out /tmp/pod-240-nsxt-lm.csr -keyout /tmp/pod-240-nsxt-lm.key -config ./nsx.cnf```.
 4. Import the certificate signing request to easy-rsa: ```ea import-req /tmp/pod-240-nsxt-lm.csr pod-240-nsxt-lm``` (FYI "ea" is an alias that I defined for the command ```/usr/share/easy-rsa/easyrsa --vars=/home/vmware/easy-rsa/vars```).
 5. Sign the request: ```ea sign-req server pod-240-nsxt-lm```.
 6. Copy the certificate to a working directory: ```cat /home/vmware/easy-rsa/pki/issued/pod-240-nsxt-lm.crt | sed -n '/BEGIN CERTIFICATE/,/END CERTIFICATE/p' > /tmp/pod-240-nsxt-lm.crt```.
