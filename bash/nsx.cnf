@@ -17,7 +17,7 @@ organizationName_default    = SDDC.Lab
 commonName                  = Common Name (e.g. server FQDN or YOUR name)
 commonName_default          = pod-240-nsxt-lm.sddc.lab
 emailAddress                = Email Address
-emailAddress_default        = info@sddc.lab
+emailAddress_default        = nsxadmin@sddc.lab
 
 [ req_ext ]
 subjectKeyIdentifier = hash
@@ -30,7 +30,13 @@ extendedKeyUsage     = serverAuth, clientAuth
 [ alternate_names ]
 DNS.1 = pod-240-nsxt-lm.sddc.lab
 DNS.2 = pod-240-nsxt-lm
-IP.1  = 10.203.240.11
 DNS.3 = pod-240-nsxt-lm-1.sddc.lab
 DNS.4 = pod-240-nsxt-lm-1
+DNS.5 = pod-240-nsxt-lm-2.sddc.lab
+DNS.6 = pod-240-nsxt-lm-2
+DNS.7 = pod-240-nsxt-lm-3.sddc.lab
+DNS.8 = pod-240-nsxt-lm-3
+IP.1  = 10.203.240.11
 IP.2  = 10.203.240.12
+IP.3  = 10.203.240.13
+IP.3  = 10.203.240.14
